@@ -18,6 +18,12 @@
                 <x-nav-link href="{{ route('posts.index') }}" :active="request()->routeIs('posts.index')">
                     投稿
                 </x-nav-link>
+                <x-nav-link href="{{ route('pages.show', ['slug' => 'page1']) }}" :active="request()->routeIs('pages.show') && request()->route('slug') === 'page1'">
+                    ページ１
+                </x-nav-link>
+                <x-nav-link href="{{ route('pages.show', ['slug' => 'page2']) }}" :active="request()->routeIs('pages.show') && request()->route('slug') === 'page2'">
+                    ページ２
+                </x-nav-link>
             </div>
         </div>
 
