@@ -21,13 +21,6 @@ vite: 5173
 laravel
 
 
-: > storage/logs/laravel.log && php artisan serve & npm run dev & tail -f storage/logs/laravel.log
-
-
-: > storage/logs/laravel.log && php artisan serve &
-npm run dev &
-tail -f storage/logs/laravel.log
-
 
 foreman start
 
