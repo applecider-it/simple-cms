@@ -140,5 +140,15 @@ LOG_CHANNEL=stderr
 
 php artisan storage:link
 
+-----------------------------------
 
+ダミーデータ
+
+
+php artisan db:seed
+
+
+php artisan tinker
+
+App\Models\Post::factory()->count(20)->create();
 
