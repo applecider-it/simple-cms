@@ -1,11 +1,25 @@
 <x-app-layout>
-    <x-slot name="header">
-        <h2 class="app-header-title">
-            トップ
-        </h2>
-    </x-slot>
+    <div class="flex items-center justify-center">
+        <div class="grid md:grid-cols-3 gap-8 p-10 max-w-6xl">
+            <div class="app-card">
+                <h2 class="text-xl font-bold mb-3">Design</h2>
+                <p class="text-gray-600">
+                    美しいUIデザインを作るためのコンポーネント。
+                </p>
+                <button class="mt-4 app-btn-indigo"> 詳しく </button>
+            </div>
 
-    <div class="app-container">
-        
+            <div class="app-card">
+                <h2 class="text-xl font-bold mb-3">Development</h2>
+                <p class="text-gray-600">高速に開発できるモダンなCSSフレームワーク。</p>
+                <button class="mt-4 app-btn-primary"> 詳しく </button>
+            </div>
+
+            <div class="app-card">
+                <h2 class="text-xl font-bold mb-3">Deploy</h2>
+                <p class="text-gray-600">簡単にサイトを公開できます。</p>
+                <button class="mt-4 app-btn-purple"> 詳しく </button>
+            </div>
+        </div>
     </div>
 </x-app-layout>

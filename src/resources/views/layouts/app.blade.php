@@ -5,7 +5,7 @@
     </head>
     <body class="font-sans antialiased">
         @include('layouts.partials.common')
-        <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
+        <div class="bg-gradient-to-br from-indigo-100 via-white to-blue-100 min-h-screen">
             @include('layouts.partials.navigation')
 
             <!-- Page Heading -->
