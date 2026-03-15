@@ -1,4 +1,8 @@
 <x-app-layout>
+    @include('partials.ui.slide-show', [
+        'list' => ['/images/sample.svg', '/images/sample.svg', '/images/sample.svg', ],
+    ])
+
     <div class="flex items-center justify-center">
         <div class="grid md:grid-cols-3 gap-8 p-10 max-w-6xl">
             <div class="app-card">
@@ -22,4 +26,9 @@
             </div>
         </div>
     </div>
+    
+    @include('partials.ui.slide-show', [
+        'list' => ['/images/sample.svg', '/images/sample.svg', '/images/sample.svg', ],
+    ])
+
 </x-app-layout>

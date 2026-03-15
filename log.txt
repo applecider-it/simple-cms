@@ -11,3 +11,7 @@ EXIT;
 npm install marked
 
 php artisan migrate
+
+
+npm install swiper
+

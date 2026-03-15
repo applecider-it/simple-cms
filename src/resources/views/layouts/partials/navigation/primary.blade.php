@@ -13,14 +13,14 @@
                 <x-nav-link href="{{ route('home') }}" :active="request()->routeIs('home')">
                     Top
                 </x-nav-link>
-                <x-nav-link href="{{ route('posts.index') }}" :active="request()->routeIs('posts.index')">
-                    Blog
-                </x-nav-link>
                 <x-nav-link href="{{ route('pages.show', ['slug' => 'about']) }}" :active="request()->routeIs('pages.show') && request()->route('slug') === 'page1'">
                     About
                 </x-nav-link>
                 <x-nav-link href="{{ route('pages.show', ['slug' => 'contact']) }}" :active="request()->routeIs('pages.show') && request()->route('slug') === 'page2'">
                     Contact
+                </x-nav-link>
+                <x-nav-link href="{{ route('posts.index') }}" :active="request()->routeIs('posts.index')">
+                    Blog
                 </x-nav-link>
                 @auth
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">

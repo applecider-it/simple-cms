@@ -7,6 +7,12 @@ namespace App\Services\Page;
  */
 class PageService
 {
+    /**
+     * 設定
+     * 
+     * キーがslug。
+     * nameがテンプレート名。
+     */
     private array $conf = [
         'about' => [
             'name' => 'about',

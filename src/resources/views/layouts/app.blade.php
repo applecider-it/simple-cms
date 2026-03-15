@@ -18,7 +18,7 @@
             @endisset
 
             <!-- Page Content -->
-            <main>
+            <main class="pb-40">
                 {{ $slot }}
             </main>
         </div>

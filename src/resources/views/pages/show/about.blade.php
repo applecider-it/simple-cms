@@ -3,7 +3,7 @@
         <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
             <!-- Image -->
             <div>
-                <img src="/favicon.svg" alt="about" class="rounded-2xl shadow-lg" />
+                <img src="/images/sample.svg" alt="about" class="rounded-2xl shadow-lg" />
             </div>
 
             <!-- Text -->
