@@ -27,8 +27,10 @@
         </div>
     </div>
     
-    @include('partials.ui.slide-show', [
-        'list' => ['/images/sample.svg', '/images/sample.svg', '/images/sample.svg', ],
-    ])
+    <div class="mt-20">
+        @include('partials.ui.slide-show', [
+            'list' => ['/images/sample.svg', '/images/sample.svg', '/images/sample.svg', ],
+        ])
+    </div>
 
 </x-app-layout>

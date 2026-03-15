@@ -4,7 +4,6 @@
             <tr>
                 <th class="app-table-th">ID</th>
                 <th class="app-table-th">タイトル</th>
-                <th class="app-table-th">Slug</th>
                 <th class="app-table-th">投稿日時</th>
                 <th class="app-table-th">作成日時</th>
                 <th class="app-table-th">操作</th>
@@ -15,7 +14,6 @@
                 <tr>
                     <td class="app-table-td">{{ $post->id }}</td>
                     <td class="app-table-td">{{ $post->title }}</td>
-                    <td class="app-table-td">{{ $post->slug }}</td>
                     <td class="app-table-td">{{ $post->published_at }}</td>
                     <td class="app-table-td">{{ $post->created_at }}</td>
                     <td class="app-table-td flex space-x-2">
