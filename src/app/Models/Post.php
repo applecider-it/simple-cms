@@ -103,4 +103,10 @@ class Post extends Model
     {
         return strip_tags($this->contentHtml());
     }
+
+    /** 一覧用の投稿内容 */
+    public function contentForList()
+    {
+        return Str::limit($this->contentText(), 50);
+    }
 }

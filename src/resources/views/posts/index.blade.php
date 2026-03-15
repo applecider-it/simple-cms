@@ -8,7 +8,7 @@
                     data-href="{{ route('posts.show', ['slug' => $post->slug]) }}" onclick="location.href = this.dataset.href"
                 >
                     <div class="p-4 text-lg">{{ $post->title }}</div>
-                    <div class="p-4 text-sm text-gray-400">{{ Str::limit($post->contentText(), 50) }}</div>
+                    <div class="p-4 text-sm text-gray-400">{{ $post->contentForList() }}</div>
                     <div class="text-sm text-gray-400 text-right">{{ $post->published_at }}</div>
                 </div>
             @endforeach
