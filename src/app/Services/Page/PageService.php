@@ -8,11 +8,11 @@ namespace App\Services\Page;
 class PageService
 {
     private array $conf = [
-        'page1' => [
-            'name' => 'page1',
+        'about' => [
+            'name' => 'about',
         ],
-        'page2' => [
-            'name' => 'page2',
+        'contact' => [
+            'name' => 'contact',
         ],
     ];
 

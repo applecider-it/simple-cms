@@ -38,7 +38,7 @@
 
     /* ヘッダーのタイトルの標準 */
     .app-header-title {
-        @apply text-gray-700 text-lg dark:text-gray-200 leading-tight;
+        @apply text-gray-700 text-lg dark:text-gray-200 leading-tight tracking-wider;
     }
 
     /* 通常のリンク */

@@ -1,11 +1,7 @@
 <x-app-layout>
-    <x-slot name="header">
-        <h2 class="app-header-title">
-            投稿
-        </h2>
-    </x-slot>
+    <section class="max-w-5xl mx-auto px-6 py-16">
+        <h1 class="text-4xl font-bold mb-12">Blog</h1>
 
-    <div class="app-container">
         <div class="space-y-4">
             @foreach ($posts as $post)
                 <div class="border border-black cursor-pointer block bg-white rounded-2xl shadow hover:shadow-xl transition p-6"
@@ -17,9 +13,10 @@
                 </div>
             @endforeach
         </div>
-        
+
         <div class="mt-4">
             {{ $posts->links() }}
         </div>
-    </div>
+
+    </section>
 </x-app-layout>

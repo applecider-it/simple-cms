@@ -1,19 +1,15 @@
 <x-app-layout>
-    <x-slot name="header">
-        <h2 class="app-header-title">
-            投稿
-        </h2>
-    </x-slot>
-
-    <div class="app-container">
-        <h3 class="text-4xl font-bold mb-4">
+    <article class="max-w-3xl mx-auto px-6 py-16">
+        <h1 class="text-4xl font-bold mb-4">
             {{ $post->title }}
-        </h3>
-        <div class="text-sm text-gray-400">
+        </h1>
+
+        <p class="text-gray-500 mb-6">
             {{ $post->published_at->format('Y-m-d H:i') }}
-        </div>
-        <div class="app-post-content-container mt-10">
+        </p>
+
+        <div class="app-post-content-container max-w-none">
             {!! $post->contentHtml() !!}
         </div>
-    </div>
+    </article>
 </x-app-layout>

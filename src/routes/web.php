@@ -22,8 +22,8 @@ Route::get('/dashboard', [HomeController::class, 'dashboard'])->middleware(['aut
 Route::get('/posts', [PostController::class, 'index'])->name('posts.index');
 Route::get('/posts/{slug}', [PostController::class, 'show'])->name('posts.show');
 
-// 独自ページ
-Route::get('/pages/{slug}', [PageController::class, 'show'])->name('pages.show');
+// 固定ページ
+Route::get('/contents/{slug}', [PageController::class, 'show'])->name('pages.show');
 
 Route::middleware('auth')->group(function () {
     // 認証必須
