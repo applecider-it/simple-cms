@@ -46,6 +46,10 @@ onMounted(() => {
                     </tbody>
                 </table>
             </div>
+
+            <div class="mt-2">
+                script以外のHTMLタグも利用可能。
+            </div>
         </div>
 
         <button
