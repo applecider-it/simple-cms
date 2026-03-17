@@ -140,5 +140,21 @@
         img {
             @apply my-4 border-4 border-gray-300;
         }
+
+        table {
+            @apply min-w-full divide-y divide-gray-200 dark:divide-gray-700;
+        }
+        thead {
+            @apply bg-gray-50 dark:bg-gray-700;
+        }
+        tbody {
+            @apply bg-white dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700;
+        }
+        th {
+            @apply px-6 py-3 text-xs font-medium text-gray-500 dark:text-gray-300 tracking-wider;
+        }
+        td {
+            @apply px-6 py-4 whitespace-nowrap;
+        }
     }
 }
