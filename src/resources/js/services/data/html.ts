@@ -1,3 +1,5 @@
+import { marked } from "marked";
+
 /**
  * HTML関連
  */
@@ -13,9 +15,7 @@ export function escapeHtml(str) {
         .replace(/'/g, "&#039;");
 }
 
-/**
- * METAタグ内のJSONデータを返す。
- */
+/** METAタグ内のJSONデータを返す。 */
 export function getMetaJson(name: string) {
     const meta = document.querySelector(`meta[name="${name}"]`) as HTMLElement;
 
@@ -27,4 +27,20 @@ export function getMetaJson(name: string) {
     }
 
     return null;
+}
+
+/** scriptタグをHTMLエスケープ */
+const escapeScriptTags = (html: string): string => {
+    return html.replace(/<script[\s\S]*?>[\s\S]*?<\/script>/gi, (match) =>
+        match.replace(/</g, "&lt;").replace(/>/g, "&gt;"),
+    );
+};
+
+/** Laravelに近い挙動のマークダウン変換 */
+export async function markdownToHtml(markdown: string) {
+    const html = await marked.parse(markdown);
+
+    const html2 = escapeScriptTags(html);
+
+    return html2;
 }

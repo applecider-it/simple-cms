@@ -1,14 +1,14 @@
-import { marked } from "marked";
 import { createApp } from "vue";
-
+import { markdownToHtml } from "@/services/data/html";
 import PostEdit from "./vue/PostEdit.vue";
 
 const editor = document.getElementById("editor") as HTMLTextAreaElement;
 const preview = document.getElementById("preview") as HTMLDivElement;
 
 const makePreview = async (): Promise<void> => {
-    const markdown: string = editor.value;
-    preview.innerHTML = await marked.parse(markdown);
+    const markdown = editor.value;
+
+    preview.innerHTML = await markdownToHtml(markdown);
 };
 
 editor.addEventListener("input", () => {
