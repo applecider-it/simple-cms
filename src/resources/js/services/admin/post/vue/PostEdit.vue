@@ -40,6 +40,17 @@ onMounted(() => {
                             <td class="app-table-td"></td>
                         </tr>
                         <tr>
+                            <td class="app-table-td">テーブル表示</td>
+                            <td class="app-table-td">
+                                | 項目 | 項目 | 項目 |<br/>
+                                |------|------|------|<br/>
+                                | 内容 | 内容 | 内容 |<br/>
+                                | 内容 | 内容 | 内容 |<br/>
+                                | 内容 | 内容 | 内容 |<br/>
+                            </td>
+                            <td class="app-table-td"></td>
+                        </tr>
+                        <tr>
                             <td class="app-table-td">画像</td>
                             <td class="app-table-td">![代替テキスト](画像URL)</td>
                             <td class="app-table-td">
