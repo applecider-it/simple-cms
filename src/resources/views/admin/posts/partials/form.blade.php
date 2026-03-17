@@ -11,7 +11,7 @@
 </div>
 
 <div>
-    <label for="slug" class="app-form-label">Slug</label>
+    <label for="slug" class="app-form-label">URL識別名</label>
     <input type="text" name="slug" id="slug" value="{{ old('slug', $post->slug) }}" class="mt-1 app-form-input">
     @error('slug')
         <p class="app-error-text">{{ $message }}</p>

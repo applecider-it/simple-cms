@@ -14,3 +14,5 @@
 
 - [ユーザー](./Models/User.md)
 - [管理者](./Models/AdminUser.md)
+- [投稿](./Models/Post.md)
+- [ファイル](./Models/File.md)

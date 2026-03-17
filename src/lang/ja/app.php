@@ -25,7 +25,7 @@ return [
             'name' => '投稿',
             'columns' => [
                 'title' => 'タイトル',
-                'slug' => 'Slug',
+                'slug' => 'URL識別名',
                 'content' => '投稿内容',
                 'published_at' => '投稿日時',
             ]
