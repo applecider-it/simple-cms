@@ -2,6 +2,7 @@
 import { ref, onMounted } from "vue";
 
 import Modal from "@/services/ui/vue/popup/Modal.vue";
+import { conf } from "./markdown";
 
 const open = ref<boolean>(false);
 
@@ -29,36 +30,17 @@ onMounted(() => {
                         </tr>
                     </thead>
                     <tbody class="app-table-tbody">
-                        <tr>
-                            <td class="app-table-td">ヘッダー</td>
-                            <td class="app-table-td"># title</td>
-                            <td class="app-table-td"></td>
-                        </tr>
-                        <tr>
-                            <td class="app-table-td">リスト表示</td>
-                            <td class="app-table-td">- list</td>
-                            <td class="app-table-td"></td>
-                        </tr>
-                        <tr>
-                            <td class="app-table-td">テーブル表示</td>
+                        <tr v-for="row in conf" :key="row.id">
+                            <td class="app-table-td">{{ row.name }}</td>
+                            <td class="app-table-td"><pre class="bg-gray-200">{{ row.grammar }}</pre></td>
                             <td class="app-table-td">
-                                | 項目 | 項目 | 項目 |<br/>
-                                |------|------|------|<br/>
-                                | 内容 | 内容 | 内容 |<br/>
-                                | 内容 | 内容 | 内容 |<br/>
-                                | 内容 | 内容 | 内容 |<br/>
-                            </td>
-                            <td class="app-table-td"></td>
-                        </tr>
-                        <tr>
-                            <td class="app-table-td">画像</td>
-                            <td class="app-table-td">![代替テキスト](画像URL)</td>
-                            <td class="app-table-td">
-                                <ul>
-                                    <li>ファイル一覧を別タブで表示</li>
-                                    <li>コピーをクリック</li>
-                                    <li>張り付ける</li>
-                                </ul>
+                                <div v-if="row.id === 'img'">
+                                    <ol class="list-decimal list-inside">
+                                        <li>ファイル一覧を別タブで表示</li>
+                                        <li>コピーをクリック</li>
+                                        <li>張り付ける</li>
+                                    </ol>
+                                </div>
                             </td>
                         </tr>
                     </tbody>
