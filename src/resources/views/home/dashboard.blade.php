@@ -7,7 +7,7 @@
 
     <div class="app-container">
         <div class="my-2">
-            <a href="{{ route('development.index') }}" class="app-link-normal">development</a>
+            Dashboard
         </div>
     </div>
 </x-app-layout>

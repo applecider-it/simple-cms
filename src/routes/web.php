@@ -35,9 +35,6 @@ Route::middleware('auth')->group(function () {
     Route::post('/profile/toggle_push_notification', [ProfileController::class, 'toggle_push_notification'])->name('profile.toggle_push_notification');
 });
 
-// 開発者向けページ
-Route::get('/development/index', [DevelopmentController::class, 'index'])->name('development.index');
-
 
 require __DIR__ . '/auth.php';
 require __DIR__ . '/admin.php';
