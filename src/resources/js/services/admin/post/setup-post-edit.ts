@@ -1,12 +1,12 @@
 import { createApp } from "vue";
-import PostEdit from "./vue/PostEdit.vue";
+import PostEditPopup from "./vue/PostEditPopup.vue";
 
 import { setupEditor } from "./editor";
 
 setupEditor();
 
-const el = document.getElementById("post-edit");
+const popup = document.getElementById("post-edit-popup");
 
-if (el) {
-    createApp(PostEdit).mount(el);
+if (popup) {
+    createApp(PostEditPopup).mount(popup);
 }

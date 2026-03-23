@@ -1,4 +1,5 @@
-export const conf = [
+/** マークダウンの説明 */
+export const markdownDescList = [
     {
         id: "header",
         name: "ヘッダー",

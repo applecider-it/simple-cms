@@ -2,7 +2,8 @@
 import { ref, onMounted } from "vue";
 
 import Modal from "@/services/ui/vue/popup/Modal.vue";
-import { conf } from "./markdown";
+import Detail from "./post-edit-popup/Detail.vue";
+import { markdownDescList } from "../markdown";
 
 const open = ref<boolean>(false);
 
@@ -15,7 +16,6 @@ onMounted(() => {
 </script>
 
 <template>
-
     <Modal :isOpen="open" :onClose="() => {open = false;}"">
         <h2 className="text-xl font-bold mb-2">markdownの説明</h2>
 
@@ -30,17 +30,11 @@ onMounted(() => {
                         </tr>
                     </thead>
                     <tbody class="app-table-tbody">
-                        <tr v-for="row in conf" :key="row.id">
+                        <tr v-for="row in markdownDescList" :key="row.id">
                             <td class="app-table-td">{{ row.name }}</td>
                             <td class="app-table-td"><pre class="bg-gray-200">{{ row.grammar }}</pre></td>
                             <td class="app-table-td">
-                                <div v-if="row.id === 'img'">
-                                    <ol class="list-decimal list-inside">
-                                        <li>ファイル一覧を別タブで表示</li>
-                                        <li>コピーをクリック</li>
-                                        <li>張り付ける</li>
-                                    </ol>
-                                </div>
+                                <Detail :id="row.id"/>
                             </td>
                         </tr>
                     </tbody>
@@ -60,5 +54,4 @@ onMounted(() => {
             閉じる
         </button>
     </Modal>
-
 </template>

@@ -1,6 +1,6 @@
 @vite('resources/js/entrypoints/admin/post-edit.ts')
 
-<div id="post-edit"></div>
+<div id="post-edit-popup"></div>
 
 <div>
     <label for="title" class="app-form-label">タイトル</label>
