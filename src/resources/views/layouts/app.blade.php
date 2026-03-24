@@ -4,7 +4,7 @@
         @include('layouts.partials.head')
     </head>
     <body class="font-sans antialiased">
-        @include('layouts.partials.common')
+        @include('partials.app.container')
         <div class="bg-gradient-to-br from-indigo-100 via-white to-blue-100 min-h-screen">
             @include('layouts.partials.navigation')
 
