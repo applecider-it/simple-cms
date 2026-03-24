@@ -1,7 +1,5 @@
 
-cd /home/owner/workspace/tmp/simple_cms/src
-
-cd /home/owner/workspace/tmp/simple_cms
+cd ~/workspace/github/simple-cms/src
 
 -----------------------------------
 
