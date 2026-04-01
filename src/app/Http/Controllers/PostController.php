@@ -29,7 +29,7 @@ class PostController extends Controller
 
         $posts->withQueryString();
 
-        return view('posts.index', compact('posts'));
+        return view('post.index', compact('posts'));
     }
 
     /** 詳細ページ */
@@ -37,6 +37,6 @@ class PostController extends Controller
     {
         $post = Post::where('slug', $slug)->firstOrFail();
 
-        return view('posts.show', compact('post'));
+        return view('post.show', compact('post'));
     }
 }
