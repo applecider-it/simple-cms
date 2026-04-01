@@ -16,14 +16,14 @@ class FileController extends Controller
         // 検索条件を保持したままページネーション
         $files = $query->paginate(5)->onEachSide(2)->withQueryString();
 
-        return view('admin.files.index', compact('files'));
+        return view('admin.file.index', compact('files'));
     }
 
     /** 新規作成 */
     public function create()
     {
         $file = new File();
-        return view('admin.files.create', compact('file'));
+        return view('admin.file.create', compact('file'));
     }
 
     /** 登録処理 */

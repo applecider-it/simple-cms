@@ -16,7 +16,7 @@
 
         @include('partials.message.session')
 
-        @include('admin.files.partials.list')
+        @include('admin.file.partials.list')
 
         <div class="mt-4">
             {{ $files->links() }}

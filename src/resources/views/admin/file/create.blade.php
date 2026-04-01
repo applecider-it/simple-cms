@@ -19,7 +19,7 @@
         <form method="POST" action="{{ route('admin.files.store') }}" enctype="multipart/form-data" class="app-form">
             @csrf
 
-            @include('admin.files.partials.form')
+            @include('admin.file.partials.form')
 
             <div class="pt-4">
                 <button type="submit" class="app-btn-primary">
