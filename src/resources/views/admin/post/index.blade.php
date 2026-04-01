@@ -16,9 +16,9 @@
 
         @include('partials.message.session')
         
-        @include('admin.posts.partials.search')
+        @include('admin.post.partials.search')
 
-        @include('admin.posts.partials.list')
+        @include('admin.post.partials.list')
 
         <div class="mt-4">
             {{ $posts->links() }}

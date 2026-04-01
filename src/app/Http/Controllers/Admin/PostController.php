@@ -26,14 +26,14 @@ class PostController extends Controller
         // 検索条件を保持したままページネーション
         $posts = $query->paginate(5)->onEachSide(2)->withQueryString();
 
-        return view('admin.posts.index', compact('posts', 'search'));
+        return view('admin.post.index', compact('posts', 'search'));
     }
 
     /** 新規作成 */
     public function create()
     {
         $post = new Post();
-        return view('admin.posts.create', compact('post'));
+        return view('admin.post.create', compact('post'));
     }
 
     /** 登録処理 */
@@ -63,7 +63,7 @@ class PostController extends Controller
     /** 編集 */
     public function edit(Post $post)
     {
-        return view('admin.posts.edit', compact('post'));
+        return view('admin.post.edit', compact('post'));
     }
 
     /** 更新処理 */

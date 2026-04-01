@@ -19,7 +19,7 @@
         <form method="POST" action="{{ route('admin.posts.store') }}" class="app-form" data-app-form-require-dirtycheck="on">
             @csrf
 
-            @include('admin.posts.partials.form')
+            @include('admin.post.partials.form')
 
             <div class="pt-4">
                 <button type="submit" class="app-btn-primary">

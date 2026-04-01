@@ -22,7 +22,7 @@
             @csrf
             @method('PUT')
 
-            @include('admin.posts.partials.form')
+            @include('admin.post.partials.form')
 
             <div>
                 <label for="name" class="app-form-label">作成日時</label>
