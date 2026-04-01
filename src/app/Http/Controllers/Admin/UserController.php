@@ -29,14 +29,14 @@ class UserController extends Controller
         // 検索条件を保持したままページネーション
         $users = $query->paginate(5)->onEachSide(2)->withQueryString();
 
-        return view('admin.users.index', compact('users', 'search'));
+        return view('admin.user.index', compact('users', 'search'));
     }
 
     /** 新規作成 */
     public function create()
     {
         $user = new User();
-        return view('admin.users.create', compact('user'));
+        return view('admin.user.create', compact('user'));
     }
 
     /** 登録処理 */
@@ -68,7 +68,7 @@ class UserController extends Controller
     {
         $user = $this->getUser($id);
 
-        return view('admin.users.edit', compact('user'));
+        return view('admin.user.edit', compact('user'));
     }
 
     /** 更新処理 */

@@ -22,7 +22,7 @@
             @csrf
             @method('PUT')
 
-            @include('admin.users.partials.form')
+            @include('admin.user.partials.form')
 
             <div>
                 <label for="name" class="app-form-label">更新日時</label>
