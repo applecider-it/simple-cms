@@ -17,14 +17,14 @@ class File extends Model
     /** ファイルのURL */
     public function fileUrl()
     {
-        return asset('storage/' . $this->file_path);
+        return Storage::url($this->file_path);
     }
 
     /** ファイル削除 */
     public function deleteFile()
     {
-        if (Storage::disk('public')->exists($this->file_path)) {
-            Storage::disk('public')->delete($this->file_path);
+        if (Storage::exists($this->file_path)) {
+            Storage::delete($this->file_path);
         }
 
         $this->delete();
@@ -33,7 +33,7 @@ class File extends Model
     /** ファイルアップロード */
     public static function uploadFile($uploadFile)
     {
-        $path = $uploadFile->store('uploads', 'public');
+        $path = $uploadFile->store('uploads');
 
         $file = File::create([
             'file_name' => $uploadFile->getClientOriginalName(),
