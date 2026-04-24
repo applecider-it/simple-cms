@@ -40,14 +40,7 @@ class FileController extends Controller
 
         $uploadFile = $request->file('file');
 
-        $path = $uploadFile->store('uploads', 'public');
-
-        $file = File::create([
-            'file_name' => $uploadFile->getClientOriginalName(),
-            'file_path' => $path,
-            'mime_type' => $uploadFile->getClientMimeType(),
-            'file_size' => $uploadFile->getSize()
-        ]);
+        File::uploadFile($uploadFile);
 
         return redirect()->route('admin.files.index')->with('success', 'ファイルを作成しました');
     }
@@ -56,7 +49,6 @@ class FileController extends Controller
     public function destroy(File $file)
     {
         $file->deleteFile();
-        $file->delete();
 
         return redirect()->route('admin.files.index')->with('success', 'ファイルを削除しました');
     }
