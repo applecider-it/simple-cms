@@ -19,3 +19,8 @@ php artisan make:factory PostFactory --model=Post
 
 php artisan make:seeder PostSeeder
 
+-----------------------------------
+
+sudo apt update
+sudo apt install php-pgsql
+
