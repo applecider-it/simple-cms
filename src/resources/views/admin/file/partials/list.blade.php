@@ -5,6 +5,7 @@
                 <th class="app-table-th">ID</th>
                 <th class="app-table-th">ファイル名</th>
                 <th class="app-table-th">URL</th>
+                <th class="app-table-th">画像</th>
                 <th class="app-table-th">作成日時</th>
                 <th class="app-table-th">操作</th>
             </tr>
@@ -17,6 +18,9 @@
                     <td class="app-table-td">
                         <input type="text" readonly value="{{ $file->fileUrl() }}" class="text-xs w-60">
                         <button onclick="App.funcs.writeClipboard(this)" data-clipboard-data="{{ $file->fileUrl() }}" class="app-btn-secondary app-btn-small">Copy</button>
+                    </td>
+                    <td class="app-table-td">
+                        <img src="{{ $file->fileUrl() }}" class="w-[3rem]" />
                     </td>
                     <td class="app-table-td">{{ $file->created_at }}</td>
                     <td class="app-table-td flex space-x-2">
