@@ -156,6 +156,10 @@ LOG_CHANNEL=stderr
 
 php artisan storage:link
 
+
+cloudinaryと切り替えられるように、FILESYSTEM_DISKはprivateではなくpublicがデフォルトになっている
+cloudinaryを使うときは、cloudinaryに切り替えて、CLOUDINARY_CLOUD_NAMEなどを変更
+
 -----------------------------------
 
 ダミーデータ
