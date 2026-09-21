@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\Log;
 
 use App\Models\Post;
 
+use App\Services\Post\ListService;
+
 /**
  * 投稿管理コントローラー
  * 
@@ -15,21 +17,24 @@ use App\Models\Post;
  */
 class PostController extends Controller
 {
-    public function __construct() {}
+    public function __construct(
+        private ListService $listService,
+    ) {}
 
     /** 一覧ページ */
     public function index(Request $request)
     {
         $page = $request->input('page', 1);
 
-        $posts = Post::with(['categories' => fn($query) => $query->orderBy('name')])
-            ->latest();
+        $postCategoryId = $request->input('post_category_id');
 
-        $posts = $posts->paginate(5, page: $page)->onEachSide(1);
+        [$posts, $selectedCategory] = $this->listService->getPosts($postCategoryId);
+
+        $posts = $posts->paginate(5, page: $page)->onEachSide(1)->withQueryString();
 
         $posts->withQueryString();
 
-        return view('post.index', compact('posts'));
+        return view('post.index', compact('posts', 'selectedCategory'));
     }
 
     /** 詳細ページ */

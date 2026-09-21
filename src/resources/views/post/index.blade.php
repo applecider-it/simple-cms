@@ -1,6 +1,6 @@
 <x-app-layout>
     <section class="max-w-5xl mx-auto px-6 py-16">
-        <h1 class="text-4xl font-bold mb-12">Blog</h1>
+        <h1 class="text-4xl font-bold mb-12">@if ($selectedCategory) {{ $selectedCategory->name }} @else Blog @endif</h1>
 
         <div class="space-y-4">
             @foreach ($posts as $post)

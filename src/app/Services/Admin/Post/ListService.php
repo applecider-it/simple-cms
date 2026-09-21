@@ -5,7 +5,7 @@ namespace App\Services\Admin\Post;
 use App\Models\Post;
 
 /**
- * 管理画面のユーザー管理の一覧関連
+ * 管理画面の投稿管理の一覧関連
  */
 class ListService
 {

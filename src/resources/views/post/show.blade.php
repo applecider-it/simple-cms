@@ -10,7 +10,7 @@
 
         <div class="mb-5">
             @foreach ($post->categories as $category)
-                <div class="app-post-category mr-3">{{ $category->name }}</div>
+                <a href="{{ route('posts.index', ['post_category_id' => $category->id]) }}" class="app-post-category mr-3">{{ $category->name }}</a>
             @endforeach
         </div>
 
