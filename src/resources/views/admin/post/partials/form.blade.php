@@ -37,3 +37,31 @@
     @enderror
 </div>
 
+<div>
+    <label class="app-form-label">投稿カテゴリー</label>
+    
+    <div class="mt-2 space-y-2">
+        @foreach ($categories as $category)
+            @php
+                // old() の値が存在すれば優先し、無ければ DB の紐付け状態を参照する
+                $isChecked = in_array(
+                    $category->id,
+                    old('categories', $postCategoryIds)
+                );
+            @endphp
+
+            <label class="inline-flex items-center me-4 cursor-pointer">
+                <input 
+                    type="checkbox" 
+                    name="categories[]" 
+                    value="{{ $category->id }}"
+                    class="form-checkbox h-4 w-4 text-blue-600"
+                    {{ $isChecked ? 'checked' : '' }}
+                >
+                <span class="ms-2 text-sm text-gray-700">
+                    {{ $category->name }}
+                </span>
+            </label>
+        @endforeach
+    </div>
+</div>

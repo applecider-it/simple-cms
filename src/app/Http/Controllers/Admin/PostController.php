@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\Post;
+use App\Models\Post\Category;
 use Illuminate\Http\Request;
 
 use App\Services\Admin\Post\ListService;
@@ -33,7 +34,7 @@ class PostController extends Controller
     public function create()
     {
         $post = new Post();
-        return view('admin.post.create', compact('post'));
+        return view('admin.post.create', compact('post') + $this->formCommon());
     }
 
     /** 登録処理 */
@@ -63,7 +64,7 @@ class PostController extends Controller
     /** 編集 */
     public function edit(Post $post)
     {
-        return view('admin.post.edit', compact('post'));
+        return view('admin.post.edit', compact('post') + $this->formCommon($post));
     }
 
     /** 更新処理 */
@@ -95,5 +96,15 @@ class PostController extends Controller
         $post->delete();
 
         return redirect()->route('admin.posts.index')->with('success', '投稿を削除しました');
+    }
+
+    /** フォームの共通要素 */
+    private function formCommon(?Post $post = null)
+    {
+        $categories = Category::latest()->get();
+
+        $postCategoryIds = [];
+
+        return compact('categories', 'postCategoryIds');
     }
 }
