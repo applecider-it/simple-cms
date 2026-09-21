@@ -86,6 +86,7 @@ class PostController extends Controller
         );
 
         $post->update($validated);
+        $post->categories()->sync($request->input('categories'));
 
         return redirect()->route('admin.posts.edit', $post)->with('success', '投稿を更新しました');
     }
@@ -104,6 +105,10 @@ class PostController extends Controller
         $categories = Category::latest()->get();
 
         $postCategoryIds = [];
+        if ($post) {
+            // 投稿に紐づくカテゴリーIDの配列を取得（例: [1, 3, 5]）
+            $postCategoryIds = $post->categories->pluck('id')->toArray();
+        }
 
         return compact('categories', 'postCategoryIds');
     }

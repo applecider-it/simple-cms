@@ -157,4 +157,10 @@
             @apply px-6 py-4 whitespace-nowrap;
         }
     }
+
+    /* 投稿カテゴリー */
+    .app-post-category {
+        @apply border-2 border-gray-700 text-sm bg-indigo-100 rounded text-gray-600 px-2 inline-block;
+    }
+
 }

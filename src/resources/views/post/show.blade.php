@@ -8,6 +8,12 @@
             {{ $post->published_at->format('Y-m-d H:i') }}
         </p>
 
+        <div class="mb-5">
+            @foreach ($post->categories as $category)
+                <div class="app-post-category mr-3">{{ $category->name }}</div>
+            @endforeach
+        </div>
+
         <div class="app-post-content-container max-w-none">
             {!! $post->contentHtml() !!}
         </div>

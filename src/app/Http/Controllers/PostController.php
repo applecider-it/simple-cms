@@ -15,15 +15,15 @@ use App\Models\Post;
  */
 class PostController extends Controller
 {
-    public function __construct(
-    ) {}
+    public function __construct() {}
 
     /** 一覧ページ */
     public function index(Request $request)
     {
         $page = $request->input('page', 1);
 
-        $posts = Post::latest();
+        $posts = Post::with(['categories' => fn($query) => $query->orderBy('name')])
+            ->latest();
 
         $posts = $posts->paginate(5, page: $page)->onEachSide(1);
 
@@ -35,7 +35,9 @@ class PostController extends Controller
     /** 詳細ページ */
     public function show(Request $request, $slug)
     {
-        $post = Post::where('slug', $slug)->firstOrFail();
+        $post = Post::with(['categories' => fn($query) => $query->orderBy('name')])
+            ->where('slug', $slug)
+            ->firstOrFail();
 
         return view('post.show', compact('post'));
     }

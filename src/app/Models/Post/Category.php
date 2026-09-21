@@ -28,8 +28,7 @@ class Category extends Model
      *
      * @var list<string>
      */
-    protected $hidden = [
-    ];
+    protected $hidden = [];
 
     /**
      * Get the attributes that should be cast.
@@ -38,8 +37,7 @@ class Category extends Model
      */
     protected function casts(): array
     {
-        return [
-        ];
+        return [];
     }
 
     /** 名前のバリデーション */

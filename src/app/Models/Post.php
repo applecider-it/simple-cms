@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 use Illuminate\Support\Str;
 
@@ -48,6 +49,17 @@ class Post extends Model
         return [
             'published_at' => 'datetime',
         ];
+    }
+
+    /** 投稿カテゴリーとのN:N連携用リレーション */
+    public function categories(): BelongsToMany
+    {
+        return $this->belongsToMany(
+            Post\Category::class,
+            'post_category_post',
+            'post_id',
+            'post_category_id'
+        );
     }
 
     /** タイトルのバリデーション */
