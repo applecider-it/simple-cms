@@ -15,4 +15,9 @@
 - [ユーザー](./Models/User.md)
 - [管理者](./Models/AdminUser.md)
 - [投稿](./Models/Post.md)
+  - [投稿カテゴリー](./Models/Post/Category.md)
 - [ファイル](./Models/File.md)
+
+## テーブル
+
+- [投稿、投稿カテゴリーの連携](./tables/post_category_post.md)
