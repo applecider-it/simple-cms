@@ -44,6 +44,24 @@ Breadcrumbs::for('admin.posts.edit', function (BreadcrumbTrail $trail, $post) {
     $trail->push($post->title, route('admin.posts.edit', $post));
 });
 
+// 投稿カテゴリー一覧
+Breadcrumbs::for('admin.post-categories.index', function (BreadcrumbTrail $trail) {
+    $trail->parent('admin.dashboard');
+    $trail->push('投稿カテゴリー', route('admin.post-categories.index'));
+});
+
+// 投稿カテゴリー新規作成
+Breadcrumbs::for('admin.post-categories.create', function (BreadcrumbTrail $trail) {
+    $trail->parent('admin.post-categories.index');
+    $trail->push('新規作成', route('admin.post-categories.create'));
+});
+
+// 投稿カテゴリー編集
+Breadcrumbs::for('admin.post-categories.edit', function (BreadcrumbTrail $trail, $category) {
+    $trail->parent('admin.post-categories.index');
+    $trail->push($category->name, route('admin.post-categories.edit', $category));
+});
+
 // 画像一覧
 Breadcrumbs::for('admin.files.index', function (BreadcrumbTrail $trail) {
     $trail->parent('admin.dashboard');

@@ -30,6 +30,12 @@ return [
                 'published_at' => '投稿日時',
             ]
         ],
+        'post/category' => [
+            'name' => '投稿カテゴリー',
+            'columns' => [
+                'name' => 'カテゴリー名',
+            ]
+        ],
     ],
     'columns' => [
         'current_password' => '現在のパスワード',

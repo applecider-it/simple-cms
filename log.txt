@@ -29,3 +29,10 @@ composer require cloudinary-labs/cloudinary-laravel
 php artisan vendor:publish --tag=cloudinary-config
 
 php artisan cloudinary:install
+
+-----------------------------------
+
+
+php artisan make:migration create_post_categories_table
+
+php artisan migrate
