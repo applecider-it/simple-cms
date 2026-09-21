@@ -15,7 +15,7 @@ class ListService
      */
     public function getPosts(?int $postCategoryId)
     {
-        $posts = Post::with(['categories' => fn($query) => $query->orderBy('name')])
+        $posts = Post::with(['categories' => fn($query) => $query->forUser()])
             ->latest();
 
         $selectedCategory = null;

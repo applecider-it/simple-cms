@@ -40,7 +40,7 @@ class PostController extends Controller
     /** 詳細ページ */
     public function show(Request $request, $slug)
     {
-        $post = Post::with(['categories' => fn($query) => $query->orderBy('name')])
+        $post = Post::with(['categories' => fn($query) => $query->forUser()])
             ->where('slug', $slug)
             ->firstOrFail();
 

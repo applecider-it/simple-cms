@@ -3,6 +3,7 @@
 namespace App\Models\Post;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Builder;
 
 /**
  * 投稿モデル
@@ -48,5 +49,11 @@ class Category extends Model
             'string',
             'max:255'
         ];
+    }
+
+    /** ユーザー向けスコープ */
+    public function scopeForUser(Builder $query): Builder
+    {
+        return $query->orderBy('name');
     }
 }
