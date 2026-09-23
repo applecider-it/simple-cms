@@ -1,5 +1,5 @@
-<div class="swiper-container swiper-container1">
-    <div class="swiper swiper1">
+<div class="swiper-container">
+    <div class="swiper app-feature-swiper1">
         <div class="swiper-wrapper">
             @foreach ($list as $val)
                 <div class="swiper-slide">
@@ -8,6 +8,6 @@
             @endforeach
         </div>
 
-        <div class="swiper-pagination swiper-pagination1"></div>
+        <div class="swiper-pagination app-feature-swiper1-pagination"></div>
     </div>
 </div>
